@@ -1,4 +1,11 @@
 fun main(){
+    //timestamp - 1:01:07
+    /*
+    bits of memory
+    byte = 8
+    short = 16
+    int = 32
+     */
     var number = 22
     val maxIntegerValue = Int.MAX_VALUE
     val minIntegerValue = Int.MIN_VALUE
@@ -25,4 +32,14 @@ fun main(){
 
     println("Long maximum value is: $myMaxLongValue")
     println("Long minimum value is: $myMinLongValue\n")
+
+    val myNumber = 28
 }
+
+
+
+
+
+
+
+

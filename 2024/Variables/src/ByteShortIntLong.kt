@@ -1,5 +1,4 @@
 fun main(){
-    //timestamp - 1:01:07
     /*
     bits of memory
     byte = 8

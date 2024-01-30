@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    //timestamp - 2:02:25
+    //timestamp - 2:29:48
     var x = 5
     val y = 3.0
 
@@ -34,12 +34,27 @@ fun main(args: Array<String>) {
     println("x = ${x--}")
     println("x = ${--x}")
 
-    val myNumber = 150
-    if (myNumber >= 150) {
-        println("Greater than 150")
-    }else if (myNumber >90) {
-        println("Greater than 90")
-    }else {
-        println("All the conditions failed")
-    }
+//    val isPlaying = true
+//    val score = 100
+//    if (isPlaying && score == 100) {
+//        println("Next level opened")
+//    } else {
+//        println("Still at the same level")
+//    }
+    val num1 = -5
+    val num2 = 3
+    if (num1 > 0 || num2 > 0) println("This condition is true") else println("This condition is false")
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

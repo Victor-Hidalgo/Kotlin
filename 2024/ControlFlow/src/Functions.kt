@@ -1,24 +1,7 @@
 fun main(args: Array<String>) {
-    //next topic - return and expressions
-    sayHello("Bata", 20)
-
-    val hasInternetConnection = false
-    if (hasInternetConnection) {
-        getData("Some data")
-    } else {
-        showMessage()
-    }
+    val max = getMax(5, 9)
+    println(max)
 }
 
-fun sayHello(name: String, age: Int) {
-    var number = age
-    println("Hello, $name! Your age is $age")
-}
-
-fun getData(data: String) {
-    println("Your data is: $data")
-}
-
-fun showMessage() {
-    println("There's no Internet connection")
-}
+fun getMax(a: Int, b: Int) = if (a > b) a else b
+    //return if (a > b) a else b

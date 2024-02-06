@@ -1,10 +1,16 @@
 fun main(args: Array<String>){
-    sendMessage(
-        name = "Bata")
+    sum(1, 4, 6, 7, 8, 9, 5, 7, 6)
 }
 
-fun sendMessage(name: String = "User", message: String = sendText()){
-    println("Name = $name and message = $message")
-}
+//fun sum(vararg numbers: Int): Int {
+//    var result = 0
+//    for (number in numbers) {
+//        result += number
+//    }
+//
+//    return result
+//}
 
-fun sendText() = "Some text"
+fun sum(vararg numbers: Int) {
+    numbers.forEach { println(it) }
+}

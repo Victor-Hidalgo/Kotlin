@@ -1,25 +1,28 @@
 fun main() {
     val user = User("Petra")
-    val friend = User("Antonio", "Bandera")
+    val friend = User(firstName = "Antonio", lastName = "Banderas")
+    val user2 = User(age = 19, firstName = "Valeria", lastName = "Moan")
 
-    println("Name = ${user.name}")
-    println("Last Name = ${user.lastName}")
-    println("Age = ${user.age}")
+    user.firstName = "Vladi"
+
+    println(user.firstName)
+    println(user.lastName)
+    println(user.age)
 
     println("\n")
 
-    println("Name = ${friend.name}")
-    println("Last Name = ${friend.lastName}")
-    println("Age = ${friend.age}")
+    println(friend.firstName)
+    println(friend.lastName)
+    println(friend.age)
 }
 
-class User(var name: String, var lastName: String, var age: Int){
-
-    constructor(name: String): this(name, "LastName", 0) {
-        println("2nd")
-    }
-
-    constructor(name: String, lastName: String): this(name, lastName, 0) {
-        println("3rd")
-    }
+class User(firstName: String, var lastName: String = "LastName", var age: Int = 0){
+    var firstName = firstName
+        get() {
+            return "FirstName: $field"
+        }
+        set(value) {
+            println("$value was assigned to firstName property")
+            field = value
+        }
 }

@@ -8,3 +8,6 @@ class Car(name: String, var model: String, var color: String, var doors: Int) {
         println("The car $name has stopped")
     }
 }
+class User(var firstName: String, var lastName: String, var age: Int){
+    lateinit var favoriteMovie: String
+}

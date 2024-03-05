@@ -1,14 +1,23 @@
 fun main() {
-    val user1 = User("Emma", "Watson", 21)
-    val user2 by lazy {
-        User("Usuario", "Petro", 23)
-    }
+    val direction = Direction.valueOf("east".uppercase())
 
-    println(user2.firstName)
+    when(direction) {
+        Direction.EAST -> {
+            println("The direction is East")
+        }
+        Direction.WEST -> println("The direction is West")
+        Direction.NORTH -> println("The direction is North")
+        Direction.SOUTH -> println("The direction is South")
+    }
 }
 
-class User(var firstName: String, var lastName: String, var age: Int){
-    init {
-        println("User: $firstName was created")
+enum class Direction(var direction: String, var distance: Int) {
+    NORTH("north", 10),
+    SOUTH("south", 20),
+    EAST("east", 15),
+    WEST("west", 40);
+
+    fun printData() {
+        println("Direction =$direction and Distance =$distance")
     }
 }

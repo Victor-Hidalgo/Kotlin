@@ -1,23 +1,43 @@
 fun main() {
-    val direction = Direction.valueOf("east".uppercase())
+    val aliceAccount = Account("Alice")
+    aliceAccount.deposit(1000)
+    aliceAccount.withdraw(500)
+    aliceAccount.deposit(-20)
+    aliceAccount.withdraw(-100)
 
-    when(direction) {
-        Direction.EAST -> {
-            println("The direction is East")
-        }
-        Direction.WEST -> println("The direction is West")
-        Direction.NORTH -> println("The direction is North")
-        Direction.SOUTH -> println("The direction is South")
-    }
+    val balance = aliceAccount.calculateBalance()
+    println("Balance is $balance")
 }
 
-enum class Direction(var direction: String, var distance: Int) {
-    NORTH("north", 10),
-    SOUTH("south", 20),
-    EAST("east", 15),
-    WEST("west", 40);
+class Account(val accountName: String) {
+    private var balance = 0
+    private var transactions = mutableListOf<Int>()
 
-    fun printData() {
-        println("Direction =$direction and Distance =$distance")
+    fun deposit(amount: Int) {
+        if (amount > 0) {
+            transactions.add(amount)
+            balance += amount
+            println("$amount deposited. Balance is now ${this.balance}")
+        } else {
+            println("Cannot deposit negative sums")
+        }
+    }
+
+    fun withdraw(withdrawal: Int) {
+        if (-withdrawal < 0) {
+            transactions.add(-withdrawal)
+            this.balance += -withdrawal
+            println("$withdrawal withdrawn. Balance is now ${this.balance}")
+        } else {
+            println("Cannot withdraw negative sums")
+        }
+    }
+
+    fun calculateBalance(): Int {
+        this.balance = 0
+        for (transaction in transactions) {
+            this.balance += transaction
+        }
+        return this.balance
     }
 }
